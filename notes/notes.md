@@ -1329,7 +1329,7 @@ e. `dx / dx == dz / dz`: No. If x = 0 and z = 1, you have problems with dividing
 ## Homework 5
 
 6.41
-<!-- The screen you are working with is a 640 x 480 array of pixels. The machine you are working on has a 32 KB direct-mapped cache with 8-byte lines.
+The screen you are working with is a 640 x 480 array of pixels. The machine you are working on has a 32 KB direct-mapped cache with 8-byte lines.
 
 ```
 struct pixel {
@@ -1362,13 +1362,13 @@ for(j = 639; j >= 0; j--) {
         buffer[i][j].a = 0;
     }
 }
-``` -->
+```
 
 75%. `line buffer[i][j].r = 0;` will always miss but `buffer[i][j].g/b/a = 0;` will hit.
 
 6.45
 
-<!-- Consider a procedure to copy and transpose the elements of an N x N matrix of type int. That is, for source matrix S and destination matrix D, we want to copy each elements s_i,j to d_j,i. This code can be written with a simple loop where the arguments to the procedure are pointers to the destination (dst) and source (src) matrices, as well as the matrix size N (dim). Your job is to devise a transpose routine that runs as fast as possible.
+Consider a procedure to copy and transpose the elements of an N x N matrix of type int. That is, for source matrix S and destination matrix D, we want to copy each elements s_i,j to d_j,i. This code can be written with a simple loop where the arguments to the procedure are pointers to the destination (dst) and source (src) matrices, as well as the matrix size N (dim). Your job is to devise a transpose routine that runs as fast as possible.
 
 ```
 void transpose(int *dst, int *src, int dim)
@@ -1378,9 +1378,9 @@ void transpose(int *dst, int *src, int dim)
         for(j = 0; j < dim; j++)
             dst[j*dim + i] = src[i*dim + j];
 }
-``` -->
+``` 
 
-<!-- ```
+```
 void effective_transpose(int *dst, int *src, int dim) {
   int i, j, a, b;
   int BLOCK = 16;
@@ -1404,7 +1404,7 @@ void effective_transpose(int *dst, int *src, int dim) {
 }
 ```
 
-The provided code aims to improve the performance of the matrix transpose operation by utilizing loop blocking. This technique enhances cache locality and takes advantage of vectorization, resulting in potentially better overall performance. Here's a breakdown of the improvements:
+<!-- The provided code aims to improve the performance of the matrix transpose operation by utilizing loop blocking. This technique enhances cache locality and takes advantage of vectorization, resulting in potentially better overall performance. Here's a breakdown of the improvements:
 
 Block Transpose: The code divides the matrix into blocks of size BLOCK x BLOCK. The outer two loops iterate over these blocks. By transposing these smaller blocks, the algorithm can take advantage of better cache utilization.
 
